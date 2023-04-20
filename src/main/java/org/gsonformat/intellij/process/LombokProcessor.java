@@ -80,6 +80,7 @@ public class LombokProcessor extends Processor {
 
         StringBuilder fieldSb = new StringBuilder();
         String filedName = fieldEntity.getGenerateFieldName();
+        fieldSb.append("@ApiModelProperty(value = \"").append(fieldEntity.getValue()).append("\")\n");
         if (!TextUtils.isEmpty(classEntity.getExtra())) {
             fieldSb.append(classEntity.getExtra()).append("\n");
             classEntity.setExtra(null);
